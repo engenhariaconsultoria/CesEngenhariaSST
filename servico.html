@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do Serviço">
+    <link rel="icon" href="assets/logo_ces.png" type="image/png">
+    <title>Detalhes do Serviço | CES Engenharia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_ces.png" alt="CES Engenharia Logo"
+                    style="height: 80px; width: auto; margin-right: 10px;">
+                <span>CES - Engenharia e Segurança do Trabalho</span>
+            </a>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#diferenciais">Diferenciais</a></li>
+                    <li><a href="index.html#contato" class="btn-nav">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-detail-section section-padding" style="margin-top: 100px;">
+            <div class="container">
+                <a href="index.html#servicos" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para
+                    Serviços</a>
+
+                <div id="service-content" class="service-detail-container">
+                    <!-- Content will be injected here by JS -->
+                    <div class="loading">Carregando detalhes do serviço...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Contact Section -->
+        <section id="contato" class="section-padding bg-dark text-white">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <h2>Precisa desse serviço?</h2>
+                    <p>Entre em contato para solicitar um orçamento ou agendar uma reunião técnica. Garanta a
+                        conformidade da sua empresa hoje mesmo.</p>
+                    <ul class="contact-details">
+                        <li><i class="fa-solid fa-phone"></i> (16) 98831-3509</li>
+                        <li><i class="fa-solid fa-envelope"></i> contato.engenhariasst@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sertãozinho - SP, Atendemos todo Brasil</li>
+                    </ul>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formsubmit.co/contato.engenhariasst@gmail.com
+" method="POST">
+                        <input type="hidden" name="_subject" value="Novo contato via Site CES Engenharia">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next"
+                            value="https://engenhariaconsultoria.github.io/CesEngenhariaSST/obrigado.html?">
+                        <!-- IMPORTANTE: Altere para a URL final do seu site -->
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company" placeholder="Nome da empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Como podemos ajudar?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 CES Engenharia. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/carlos-eduardo8" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/cesconsultoriasst/?hl=pt-br" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

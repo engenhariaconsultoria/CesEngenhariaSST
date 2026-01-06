@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mensagem enviada com sucesso.">
+    <link rel="icon" href="assets/logo_ces.png" type="image/png">
+    <title>Obrigado! | CES Engenharia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thank-you-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+            padding: 180px 20px 40px 20px;
+        }
+
+        .thank-you-icon {
+            font-size: 80px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: bounceIn 0.8s ease;
+        }
+
+        .thank-you-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        .thank-you-section p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_ces.png" alt="CES Engenharia Logo"
+                    style="height: 80px; width: auto; margin-right: 10px;">
+                <span>CES - Engenharia e Segurança do Trabalho</span>
+            </a>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#contato" class="btn-nav">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="thank-you-section container">
+            <div class="thank-you-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h1>Mensagem Recebida!</h1>
+            <p>Agradecemos o seu contato. Nossa equipe técnica recebeu sua mensagem e retornará o mais breve possível
+                com as informações solicitadas.</p>
+            <a href="index.html" class="btn btn-primary">Voltar para o Início</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 CES Engenharia. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/carlos-eduardo8" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/cesconsultoriasst/?hl=pt-br" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
