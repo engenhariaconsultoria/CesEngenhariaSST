@@ -1,3 +1,23 @@
+// Theme Toggle Logic
+const themeToggleCheckbox = document.getElementById('theme-toggle');
+if (themeToggleCheckbox) {
+    // Set initial toggle state based on theme attribute set by the head script
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        themeToggleCheckbox.checked = true;
+    } else {
+        themeToggleCheckbox.checked = false;
+    }
+
+    themeToggleCheckbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
 
 // Menu Mobile Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

@@ -6,11 +6,21 @@
     --accent-color: #D4AF37;
     /* Metallic Gold/Orange for CTAs */
     --text-color: #333333;
+    --heading-color: var(--primary-color);
     --light-text: #666666;
     --bg-light: #F8F9FA;
+    --bg-dark-section: var(--primary-color);
     --white: #FFFFFF;
     --border-color: #E0E0E0;
     --success: #28a745;
+
+    --body-bg: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --header-bg: #FFFFFF;
+
+    --btn-nav-bg: var(--primary-color);
+    --btn-nav-text: var(--white);
+    --btn-primary-text: var(--primary-color);
 
     --font-heading: 'Roboto', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -18,6 +28,30 @@
     --transition: all 0.3s ease;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #1e293b;
+    --accent-color: #eab308;
+
+    --text-color: #e2e8f0;
+    --heading-color: #f8fafc;
+    --light-text: #94a3b8;
+
+    --bg-light: #0f172a;
+    --bg-dark-section: #0b1120;
+
+    --white: #ffffff;
+    --border-color: #334155;
+
+    --body-bg: #020617;
+    --card-bg: #1e293b;
+    --header-bg: #0f172a;
+
+    --btn-nav-bg: #60a5fa;
+    --btn-nav-text: #020617;
+    --btn-primary-text: #020617;
 }
 
 /* Responsive Typography Scale */
@@ -45,7 +79,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--body-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -62,7 +96,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--heading-color);
     font-weight: 700;
 }
 
@@ -117,7 +151,7 @@ section[id] {
 }
 
 .bg-dark {
-    background-color: var(--primary-color);
+    background-color: var(--bg-dark-section);
     color: var(--white);
 }
 
@@ -135,7 +169,7 @@ section[id] {
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--btn-primary-text);
 }
 
 .btn-primary:hover {
@@ -168,7 +202,7 @@ section[id] {
 
 /* Header */
 header {
-    background-color: var(--white);
+    background-color: var(--header-bg);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: fixed;
     width: 100%;
@@ -191,7 +225,7 @@ header {
     gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--heading-color);
 }
 
 .logo i {
@@ -239,8 +273,8 @@ header {
 }
 
 .nav-links .btn-nav {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--btn-nav-bg);
+    color: var(--btn-nav-text);
     padding: 8px 20px;
     border-radius: 4px;
     position: relative;
@@ -281,8 +315,67 @@ header {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--heading-color);
     cursor: pointer;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch .slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: var(--secondary-color);
+    border-radius: 34px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch .slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch input:checked+.slider {
+    background-color: var(--primary-color);
+}
+
+.theme-switch input:checked+.slider::before {
+    transform: translateX(24px);
+}
+
+.theme-switch .slider i.fa-moon {
+    color: var(--white);
+    font-size: 11px;
+    z-index: 1;
+}
+
+.theme-switch .slider i.fa-sun {
+    color: #f39c12;
+    font-size: 11px;
+    z-index: 1;
 }
 
 /* Hero Section */
@@ -356,6 +449,9 @@ header {
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 15px;
+    text-align: left;
+    margin-left: -15px;
+    /* Offset the padding to perfectly align the visual text with the h2 */
 }
 
 .intro-text h2 {
@@ -421,13 +517,20 @@ header {
     }
 }
 
+.service-card-link {
+    display: flex;
+}
+
 .service-card {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
     box-shadow: var(--shadow);
     transition: var(--transition);
     border-bottom: 3px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -570,7 +673,7 @@ header {
 }
 
 .contact-form-wrapper {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     padding: 40px;
     border-radius: 10px;
     color: var(--text-color);
@@ -595,6 +698,8 @@ header {
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
+    background-color: var(--body-bg);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
@@ -671,13 +776,13 @@ footer {
     }
 
     .logo img {
-        height: 50px !important;
+        height: 65px !important;
         /* Override inline style */
         width: auto;
     }
 
     .logo span {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         line-height: 1.2;
     }
 
@@ -688,7 +793,7 @@ footer {
         /* Pushes it below the header */
         left: 0;
         width: 100%;
-        background-color: var(--white);
+        background-color: var(--header-bg);
         flex-direction: column;
         padding: 20px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -760,7 +865,7 @@ footer {
 
 @media (max-width: 480px) {
     .logo span {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .hero h1 {
@@ -793,7 +898,7 @@ footer {
 }
 
 .service-detail-container {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: var(--shadow);
     overflow: hidden;
